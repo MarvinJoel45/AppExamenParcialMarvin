@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AppExamParcial</string>
+    <string name="img_icon">Imagen Icono Login</string>
+    <string name="txt_name">Ingrese su nombre o cuenta</string>
+    <string name="txt_password">Ingrese su contraseña</string>
+
+    <string name="btn_login">LOGIN</string>
+    <string name="txt_register">¿No tiene una cuenta? Registrese</string>
+</resources>
