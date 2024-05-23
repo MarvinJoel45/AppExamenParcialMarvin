@@ -21,6 +21,7 @@
     <string name="txt_surname_register">Registre su apellido</string>
 
     <string name="lbl_date_register">Fecha:</string>
+    <string name="txt_date">dd/mm/yyyy</string>
     <string name="lbl_options_register">Opciones:</string>
     <string name="lbl_sex">Sexo:</string>
 
