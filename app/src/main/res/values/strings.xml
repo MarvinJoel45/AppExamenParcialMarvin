@@ -1,9 +1,33 @@
 <resources>
+    <!-- Main Activity -->>
+
     <string name="app_name">AppExamParcial</string>
     <string name="img_icon">Imagen Icono Login</string>
+
+    <string name="lbl_name">Nombre o Cuenta:</string>
+    <string name="lbl_password">Contraseña:</string>
+
     <string name="txt_name">Ingrese su nombre o cuenta</string>
     <string name="txt_password">Ingrese su contraseña</string>
 
     <string name="btn_login">LOGIN</string>
     <string name="txt_register">¿No tiene una cuenta? Registrese</string>
+
+    <!-- Register -->>
+    <string name="lbl_name_register">Nombres:</string>
+    <string name="txt_name_register">Registre su nombre</string>
+
+    <string name="lbl_surname_register">Apellidos:</string>
+    <string name="txt_surname_register">Registre su apellido</string>
+
+    <string name="lbl_date_register">Fecha:</string>
+    <string name="lbl_options_register">Opciones:</string>
+    <string name="lbl_sex">Sexo:</string>
+
+    <string name="rdb_men">Masculino</string>
+    <string name="rdb_women">Femenino</string>
+
+    <string name="btn_register">Registrar</string>
+    <string name="txt_login">Volver</string>
+
 </resources>
