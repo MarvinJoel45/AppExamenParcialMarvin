@@ -31,4 +31,9 @@
     <string name="btn_register">Registrar</string>
     <string name="txt_login">Volver</string>
 
+    <string name="txt_welcome">Hola MarvinJara22</string>
+
+    <string name="txt_win">Has Ganado :)!!</string>
+    <string name="btn_reset">Reiniciar</string>
+
 </resources>

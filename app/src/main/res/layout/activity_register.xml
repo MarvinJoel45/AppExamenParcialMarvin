@@ -143,7 +143,6 @@
         android:textColorHint="#546E7A"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        android:inputType="TODO"
         android:autofillHints=""
         tools:ignore="TextFields" />
 
@@ -153,6 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="20dp"
+        android:onClick="Registrar"
         android:text="@string/btn_register"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"

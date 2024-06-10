@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +21,15 @@ import java.util.Calendar;
 
 public class register extends AppCompatActivity {
 
-    private Spinner spinner;
-    private EditText editTextDate;
+    private Spinner spn_option;
+    private EditText txt_date;
     private Calendar calendar;
+
+    private EditText txt_name;
+    private EditText txt_apellido;
+    private RadioGroup sexo;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +42,43 @@ public class register extends AppCompatActivity {
             return insets;
         });
 
-        spinner = findViewById(R.id.spinner);
-        editTextDate = findViewById(R.id.txt_date);
+        spn_option = findViewById(R.id.spinner);
+        txt_date = findViewById(R.id.txt_date);
         calendar = Calendar.getInstance();
 
-        editTextDate.setOnClickListener(v -> mostrarCuadroFecha() );
+        txt_name = findViewById(R.id.txt_name_register);
+        txt_apellido = findViewById(R.id.txt_surname_register);
+        sexo = findViewById(R.id.radioGroup);
+
+        txt_date.setOnClickListener(v -> mostrarCuadroFecha() );
 
         String[] options = {"IronMan","Thor","Hulk","Spiderman"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_options,options);
-        spinner.setAdapter(adapter);
+        spn_option.setAdapter(adapter);
+    }
+
+    public void Registrar(View v){
+        String name = txt_name.getText().toString();
+        String surname = txt_apellido.getText().toString();
+        String option = spn_option.getSelectedItem().toString();
+        int selectRadioGroupId = sexo.getCheckedRadioButtonId();
+        RadioButton selectRadioButton = findViewById(selectRadioGroupId);
+        String sexo = selectRadioButton.getText().toString();
+        String date = txt_date.getText().toString();
+
+        if (!name.equals("") && !surname.equals("") && !option.equals("") && !sexo.equals("") && !date.equals("")){
+            Intent intent = new Intent(this, sorpresa.class);
+            String usuario = name+surname;
+            intent.putExtra("txt_usuario",usuario);
+            intent.putExtra("txt_option",option);
+            intent.putExtra("txt_sexo",sexo);
+            intent.putExtra("txt_date",date);
+            startActivity(intent);
+            finish();
+        }else {
+            Toast.makeText(this,"Falta rellenar datos en el formulario", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void Regresar(View view){
@@ -56,7 +92,7 @@ public class register extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
           this,
                 (view, year, month, dayOfMonth) -> {
-                    editTextDate.setText(dayOfMonth + "/" + (month+1) + "/" +year);
+                    txt_date.setText(dayOfMonth + "/" + (month+1) + "/" +year);
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
