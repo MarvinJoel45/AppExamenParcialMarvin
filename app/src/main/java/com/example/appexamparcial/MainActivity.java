@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText cuenta;
     EditText contrasena;
+    private String user;
+    private String passwordGet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        user = getIntent().getStringExtra("txt_usuario");
+        passwordGet = getIntent().getStringExtra("txt_contraseña");
+
         cuenta = findViewById(R.id.txt_cuenta);
         contrasena = findViewById(R.id.txt_password);
     }
@@ -42,12 +47,31 @@ public class MainActivity extends AppCompatActivity {
         String nameCuenta = String.valueOf(cuenta.getText().toString());
         String password = String.valueOf(contrasena.getText().toString());
 
-        if (nameCuenta.equals("MarvinJara22" ) && password.equals("123456")){
-            Intent i = new Intent(this, sorpresa.class);
-            startActivity(i);
-            finish();
+        if (user != null && password != null){
+            if(nameCuenta.equals(user) && password.equals(passwordGet)){
+                Intent i = new Intent(this, sorpresa.class);
+                i.putExtra("txt_usuario",nameCuenta);
+                startActivity(i);
+                finish();
+            }else{
+                Toast.makeText(this,"Lo siento, la cuenta o contraseña es incorrecta",Toast.LENGTH_LONG).show();
+            }
         }else{
-            Toast.makeText(this,"Lo siento, la cuenta o contraseña es incorrecta",Toast.LENGTH_LONG).show();
+            if(nameCuenta.length() >10){
+                Toast.makeText(this,"El nombre de usuario es muy grande",Toast.LENGTH_LONG).show();
+            }else{
+                if (nameCuenta.equals("MarvinJara" ) && password.equals("123456")){
+                    Intent i = new Intent(this, sorpresa.class);
+                    i.putExtra("txt_usuario",nameCuenta);
+                    startActivity(i);
+                    finish();
+                }else{
+                    Toast.makeText(this,"Lo siento, la cuenta o contraseña es incorrecta",Toast.LENGTH_LONG).show();
+                }
+            }
         }
+
+
+
     }
 }

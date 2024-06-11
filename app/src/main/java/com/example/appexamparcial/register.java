@@ -58,7 +58,7 @@ public class register extends AppCompatActivity {
         spn_option.setAdapter(adapter);
     }
 
-    public void Registrar(View v){
+    public boolean Registrar(View v){
         String name = txt_name.getText().toString();
         String surname = txt_apellido.getText().toString();
         String option = spn_option.getSelectedItem().toString();
@@ -67,17 +67,24 @@ public class register extends AppCompatActivity {
         String sexo = selectRadioButton.getText().toString();
         String date = txt_date.getText().toString();
 
+        if(name.length() > 10){
+            Toast.makeText(this,"El nombre de usuario es muy grande", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
         if (!name.equals("") && !surname.equals("") && !option.equals("") && !sexo.equals("") && !date.equals("")){
-            Intent intent = new Intent(this, sorpresa.class);
-            String usuario = name+surname;
-            intent.putExtra("txt_usuario",usuario);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("txt_usuario",name);
+            intent.putExtra("txt_contraseña",surname);
             intent.putExtra("txt_option",option);
             intent.putExtra("txt_sexo",sexo);
             intent.putExtra("txt_date",date);
             startActivity(intent);
             finish();
+            return true;
         }else {
             Toast.makeText(this,"Falta rellenar datos en el formulario", Toast.LENGTH_LONG).show();
+            return false;
         }
     }
 

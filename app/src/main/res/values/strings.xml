@@ -3,6 +3,9 @@
 
     <string name="app_name">AppExamParcial</string>
     <string name="img_icon">Imagen Icono Login</string>
+    <string name="img_icon2">Background</string>
+    <string name="txt_title">TRES EN RAYA</string>
+
 
     <string name="lbl_name">Nombre o Cuenta:</string>
     <string name="lbl_password">Contraseña:</string>
@@ -14,11 +17,11 @@
     <string name="txt_register">¿No tiene una cuenta? Registrese</string>
 
     <!-- Register -->>
-    <string name="lbl_name_register">Nombres:</string>
-    <string name="txt_name_register">Registre su nombre</string>
+    <string name="lbl_name_register">Cuenta:</string>
+    <string name="txt_name_register">Registre su cuenta</string>
 
-    <string name="lbl_surname_register">Apellidos:</string>
-    <string name="txt_surname_register">Registre su apellido</string>
+    <string name="lbl_surname_register">Contraseña:</string>
+    <string name="txt_surname_register">Registre su contraseña</string>
 
     <string name="lbl_date_register">Fecha:</string>
     <string name="txt_date">dd/mm/yyyy</string>
@@ -31,9 +34,9 @@
     <string name="btn_register">Registrar</string>
     <string name="txt_login">Volver</string>
 
-    <string name="txt_welcome">Hola MarvinJara22</string>
+    <string name="txt_welcome">Hola</string>
 
-    <string name="txt_win">Has Ganado :)!!</string>
+    <string name="txt_win">Ha Ganado el jugador 1 :)</string>
     <string name="btn_reset">Reiniciar</string>
 
 </resources>
